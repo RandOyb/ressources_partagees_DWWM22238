@@ -7,7 +7,7 @@ var semaine = [ 'lun', 'mra', 'mer', 'jeu', 'ven', 'sam', 'ddi' ];
 2. Afficher les valeurs du tableau en utilisant la méthode console.log
 3. Ajouter la valeur ‘dim’ à la fin du tableau
 4. Remplacer la valeur ‘mra’ par ‘mar’
-5. Afficher le nombre de valeurs du tableau en utilisant la méthode document.write
+5. Afficher le nombre de valeurs du tableau en utilisant la méthode console.log
 6. Afficher la troisième valeur du tableau
 
 

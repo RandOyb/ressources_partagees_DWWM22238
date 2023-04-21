@@ -1,9 +1,10 @@
 /*
-b booléen
-s string
-i int (entier)
-f float
-a array
+Prefixe à utiliser pour le nommage des variables en fonction de leur type
+b pour une variable booléenne
+s pour une variable string
+i pour une variable int (entier)
+f pour une variable float (nombre décimal)
+a pour une variable array (tableau)
 */
 
 // Controler la saisie de l'utilisateur
@@ -26,10 +27,6 @@ a array
     10.2- Si le nombre d'éléments bien placés est égale à la longueur de la combianison, la partie est gagnée. On affiche la combinaison qu'il fallait trouver.
     10.3- Sinon, dans tous les autres cas, on revient à l'étape 3
 */
-
-
-
-
 
 // VARIABLES
 let eNombreEssais;

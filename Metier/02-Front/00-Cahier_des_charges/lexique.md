@@ -1,0 +1,9 @@
+**client**
+**serveur**
+**URL**
+**routeur**
+**domaine**
+**DNS**
+**protocole**
+**HTTP**
+**TCP/IP**

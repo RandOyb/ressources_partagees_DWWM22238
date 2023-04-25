@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Maquette et ergonomie</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		.slides section kbd 
+		{
+		    font-family : "Courier New";
+			font-size: 30px;
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">		    
+			<div class="slides">
+			    <section data-background="#87bd26">
+					<img src="images/reveal_home.jpg" alt="AFPA" class="stretch">				 					
+				</section>		
+				<section data-background="#87BD26">
+					<h1>Maquetter une application</h1>
+					<img src="images/sketch.jpg" alt="Sketch" title="Sketch" class="stretch">	
+				</section>
+				<section data-background="#87BD26">
+					<h1>Arborescence</h1>
+					<img src="images/plan_site.png" alt="Arborescence" class="stretch">	
+				</section>
+				<section data-background="#87BD26">
+					<h1>Zoning</h1>
+					<img src="images/zoning.jpg" alt="Zoning" class="stretch">	
+				</section>
+				<section data-background="#87BD26">
+					<h1>Wireframe</h1>
+					<img src="images/wireframe.png" alt="Wireframe" class="stretch">	
+				</section>
+				<section data-background="#87BD26">
+					<h1>Wireframe</h1>
+					  <ul> 
+					    <li>Maquette "fil de fer"</li> 
+						<li>Différentes options pour valider un choix final</li>        
+                        <li class="fragment">Maquettes pour tous les dispositifs : PC, mobile, portrait, paysage...</li>          						
+					</ul>						
+				</section>
+				<section data-background="#87BD26">
+					<h1>Exemple</h1>
+					<img src="images/wireframe_devices.png" alt="Wireframes devices" class="stretch">				
+				</section>		
+                <section data-background="#87BD26">
+					<h1>Mock-up (ou mockup)</h1>
+				    <ul> 
+						<li>Wireframe avec navigation (liens/boutons cliquables)</li>        
+                        <li>Wireframe enrichi : couleurs, visuels</li>          						
+					</ul>						
+				</section>		
+                <section data-background="#87BD26">
+					<h1>Prototype</h1>
+					  <ul>
+						<li>Sert à valider (ou pas) les technologies => R&D</li>	
+						<li class="fragment">P.O.C. = Proof Of Concept</li>														
+					</ul>																						
+				</section>		
+                <section data-background="#87BD26">
+					<h1>Exemple</h1>
+					<img src="images/mockup.jpg" alt="Mockup prototype exemple" class="stretch">																					
+				</section>
+                <section data-background="#87BD26">
+					<h1>Design (Photoshop PSD)</h1>
+					<img src="images/filrouge_psd.jpg" alt="Maquette PSD" class="stretch">																					
+				</section>		
+                 <section data-background="#87BD26">
+					<h1>Bootstrap</h1>
+					<a href="https://getbootstrap.com/docs/4.1/examples" title="Bootstrap">Bootstrap</a>																					
+				</section>					
+				<section data-background="#87BD26">
+					<h1>Ergonomie</h1>
+					<a href="https://www.creads.fr/blog/actualite/sites-les-plus-moches-web" title="Contre-exemples ergonomie" target="_blank">Exemples</a>					
+				</section>	
+                <section data-background="#87BD26">
+					<h1>Ergonomie</h1>
+					    <ul>
+						<li>L'internaute doit trouver rapidement ce qu'il cherche (3 clics)</li>	
+						<li class="fragment">1ère règle: d'abord un site homogène</li>
+						<li class="fragment">Ne pas confondre ergonomie avec design, ni avec fonctionnalités</li>	  
+                        <li class="fragment">Accessibilité (obligatoire pour les services publics)</li>                   						
+					</ul>		
+				</section>	
+                <section data-background="#87BD26">
+					<h1>Quelques règles courantes</h1>
+					<ul>
+						<li>Logo en haut à droite, cliquable pour revenir à l'accueil</li>	
+						<li class="fragment">Menu de navigation, fil d'ariane</li>	 
+						<li class="fragment">Moteur de recherche</li>
+						<li class="fragment">Plan de site, liens en pied de page</li>						       						
+					</ul>		
+				</section>		
+               	<section data-background="#87BD26">
+					<h1>Outils</h1>
+					<ul>
+						<li>Wireframe : Axure, Balsamiq, Pencil</li>	
+						<li class="fragment">Référentiels ergonomie/accessibilité : Opquast, Accessiweb</li>															
+					</ul>		
+				</section>
+			</div>	<!-- .slide -->
+		</div> <!-- .reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }  
+				]
+			});
+		</script>
+	</body>
+</html>

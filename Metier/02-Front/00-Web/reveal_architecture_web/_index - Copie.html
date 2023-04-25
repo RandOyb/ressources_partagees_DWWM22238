@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Architecture web | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+							
+		img {
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+		
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section  data-background="#87bd26" data-background-transition="concave">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA">				 					
+				</section>
+			
+			    <section data-background="#87bd26">
+					<h1>WORLD WIDE WEB</h1>
+					<h2>1990 ... 2018</h2>				    				
+				</section>
+				<!-- Slides verticales -->
+				<section data-background="#87bd26">
+					<section data-background="#87bd26">
+						<h1>Internet</h1>
+						<ul>
+							<li> = <b>Inter</b>connexion de réseau (<b>net</b>work)</li>
+							<li class="fragment">Une <i>toile d'araignée mondiale</i></li>				
+							<li class="fragment">Nécessite plusieurs protocoles de la couche applicative : <abbr title="Transmission Control Protocol/Internet Protocol">TCP/IP</abbr>, <abbr title="Uniform Resource Locator">URL</abbr>, <abbr title="Domain Name System">DNS</abbr>, <abbr title="Hypertext Transfer Protocol">HTTP</abbr>, <abbr title="File Transfer Protocol">FTP</abbr></li>
+							<li class="fragment">Plusieurs langages : HTML, CSS, Javascript, système d'exploitation, langages serveurs</li>
+						   <li class="fragment">Extensions de fichiers <code>.html</code>, <code>.php</code>, <code>.asp</code></li>		
+							<li class="fragment">En HTML 5 : agencement et habillage via feuilles de styles CSS (polices, couleurs, dimensions...)</li>								
+						</ul>							
+					</section>
+					<section data-background="#87bd26">
+						<h1>Couches réseau</h1>
+						<img src="images/couches_reseau.png" alt="Couches réseau" title="Couches réseau" width="425" height="438">
+					</section>
+				</section>
+				<!-- fin Slides verticales -->			
+					
+                <section data-background="#87bd26">					
+				<section data-background="#87bd26">
+					<h1>Protocoles</h1>
+					<ul>
+						<li>1982 : TCP/IP, issu d'<abbr title="Advanced Research Projects Agency Network">ARPANet</abbr> (début en 1966)</li>
+						<li class="fragment">1971 : Courrier électronique</li>	
+						<li class="fragment">1983 : Noms de domaines (D.N.S.)</li>	
+						<li class="fragment">1990 : <abbr title="Hypertext Transfer Protocol">HTTP</abbr>, <abbr title="Uniform Resource Locator">URL</abbr>, <abbr title="HyperText Markup Language">HTML</abbr> et un navigateur (Tim Berners-Lee, CERN/MIT)</li>
+						<li class="fragment">1990-1993 : Création du <abbr title="World Wide Web Consortium">W3C</abbr>, 1<sup>er</sup> navigateur public "Mosaic", ouverture publique (30/04/1993)</li>	                      		
+					</ul>							
+				</section>
+					<section data-background="#87bd26">
+						<h1>Le premier site (20/12/1990)</h1>
+						<img src="images/premier_site.png" alt="Premier site" title="Premier site"> 
+					</section>				
+				</section>
+				<!-- fin Slides verticales -->			
+				
+				<section data-background="#87bd26">
+					<h1>Le web en 2018</h1>
+					<ul>
+					    <li>10 sites web en 1991, 1,4 milliard en 2018</li>    
+  					    <li class="fragment">4 milliards d'internautes (50% de la population mondiale)</li>
+						<li class="fragment">+ de 50% de pages vues sur mobile (depuis octobre 2016)</li>
+						<li class="fragment">E-commerce mondial : 1915 milliards USD en 2016, 4000 en 2020 ?</li>			
+                        						
+					</ul>							
+				</section>	
+				<!-- Slides verticales -->			
+                <section data-background="#87bd26">			
+                    <section data-background="#87bd26">
+						<h1>Architecture web</h1>
+						<img src="images/architecture_02.jpg" alt="Architecture web 02" title="Architecture web 02">																				
+					</section>	
+					<section data-background="#87bd26">
+						<h1>Architecture web</h1>
+						<img src="images/architecture_03.png" alt="Architecture web 03" title="Architecture web 03">																				
+					</section>							
+                </section>		
+                <!-- fin Slides verticales -->								
+				
+				<!-- Slides verticales -->
+				<section data-background="#87bd26"> 
+					<section data-background="#87bd26">
+						<h1>Requêtes HTTP</h1>																			
+						<pre> 
+						<code class="hljs" data-trim contenteditable>
+						GET http://www.afpa.fr
+						Accept: text/html
+						Accept-Language: fr-FR, en-US;
+						Host: www.afpa.fr
+						User-Agent: Mozilla/5.0 Chrome/37.0.2062.120 Safari/537.36                    				
+						</code>
+						</pre>				
+					</section>		
+					 <section data-background="#87bd26">
+						<h1>Requêtes HTTP</h1>									
+						<pre>
+						<code class="hljs" data-trim contenteditable>
+						Status Code: 200 OK
+						Content-Type: text/html
+						Content-Length: 3452
+						Date: Wed, 24 Sep 2014 06:58:04 GMT
+						Server: nginx/1.1.19                    				
+						</code>
+						</pre>				
+					</section>	
+					
+					 <section data-background="#87bd26">
+						<h1>Requêtes HTTP</h1>									
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+							<html>
+							<body>Hello world !...                    				
+							</code>
+						</pre>				
+					</section>	
+				</section> 						
+                <!-- fin Slides verticales -->				
+					
+			
+					<section data-background="#87bd26">
+						<h1>Site internet</h1>
+						<ul>
+							<li>Un nom de domaine (D.N.S.): www.afpa.fr</li>
+							<li class="fragment">Un serveur d'hébergement (ex: OVH), avec une base de données (MySql, SQLServer...)</li>
+							<li class="fragment">Code HTML calculé/stocké sur le serveur, il est envoyé au client dans la réponse HTTP.</li>						
+						</ul>							
+					</section>
+					
+					<!-- Slides verticales -->
+				    <section data-background="#87bd26"> 	
+						<section data-background="#87bd26">
+							<h1>Site internet</h1>
+							<ul>
+								<li>Un ensemble de ressources : fichiers html, css, js, php, images, vidéos</li>
+								<li class="fragment">Fichiers dans des répertoires = arborescence</li>
+								<li class="fragment">Partie publique = front vs. partie admin = back-office</li>	
+								<li class="fragment">Front-end : design des pages vs. back-end : langages serveurs, B.D.D.</li>										
+							</ul>							
+						</section>				
+                        <section data-background="#87bd26">
+							<h1>Arborescence d'un site</h1>
+							<img src="images/arborescence.png" alt="arborescence" title="arborescence">
+						</section>													
+				    </section> 						
+                <!-- fin Slides verticales -->	
+				
+				<section data-background="#87bd26">
+				    <h1>HTML</h1>
+				    <ul>
+						<li>Hyper Text Markup Language = langage de description de pages hypertextes</li>
+						<li class="fragment">HTML permet de décrire le contenu de la page (textes, images, vidéos, liens)</li>						
+					</ul>							
+				</section>				
+                <section data-background="#87bd26">
+				    <h1>CSS</h1>
+				    <ul>
+						<li>Cascading Style Sheets = feuilles de style en cascade</li>
+						<li class="fragment">Le code CSS permet d'influer sur l'aspect graphique des éléments HTML. On peut manipuler les couleurs, la marge, la position, la bordure...</li>
+						<li class="fragment">Comme le HTML, le code CSS est envoyé au client lors de la réponse</li>						
+					</ul>							
+				</section>				
+				<section data-background="#87bd26">
+				    <h1>Javascript (JS)</h1>
+				    <ul>
+						<li>Langage permettant de manipuler les éléments HTML à travers le D.O.M.</li>
+						<li class="fragment">D.O.M. : Document Object Model = représentation objet de la page web (éléments HTML)</li>
+						<li class="fragment">Le code Javascript agit sur le client (navigateur)</li>		
+                        <li class="fragment">Le Javascript permet de modifier des éléments d'une page (y compris CSS) sans rechargement</li>			 						
+					</ul>							
+				</section>				
+				<section data-background="#87bd26">
+				    <h1>Langages serveur</h1>
+				    <ul>
+						<li>Langages (ou technologies) dont le résultat produit du code client (HTML, CSS, JS)</li>					
+						<li class="fragment">Langages : PHP, ASP.NET, Java, Python, Ruby, Javascript (NodeJs)...</li>	                      			 						
+					</ul>							
+				</section>				
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+				
+				transition: 'convex', // none, fade, slide, convex, concave, zoom
+				
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>

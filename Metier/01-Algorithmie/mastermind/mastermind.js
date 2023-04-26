@@ -28,5 +28,151 @@ a pour une variable array (tableau)
     10.3- Sinon, dans tous les autres cas, on revient à l'étape 3
 */
 
-// VARIABLES
-let eNombreEssais;
+
+// Permet de récupérer la saisie de l'utilisateur
+function saisirTexte(pMessage){
+    let sSaisie;
+    sSaisie = prompt(pMessage);
+    return sSaisie;
+}
+
+// Permet de récupérer la saisie de l'utilisateur converti en nombre. 
+function SaisirValeurNumerique(pMessage){
+    let sSaisie = saisirTexte(pMessage);
+    // conversion de la saisie en nombre
+    sSaisie = parseInt(sSaisie);
+    return sSaisie;
+}
+
+// Permet de demander à l'utilisateur s'il veut refaire une partie.
+function continuerPartie(){
+    let sChoixUtilisateur = saisirTexte("Voules-vous refaire une partie? O/N");
+    if (sChoixUtilisateur.toLowerCase() == "o"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// Renvoie un tableau de 4 nombres aléatoires compris entre min et max
+function genererCombinaisonAleatoire(pMin, pMax) {
+    const tab = [];
+    for (let i = 0; i < 4; i++) {
+        tab[i] = Math.floor(Math.random() * (pMax - pMin + 1) + pMin);
+        console.log(tab[i]);
+    }
+    return tab;
+}
+
+function saisirCombinaison(){
+    let tPropositions = [];
+    for (let i = 0; i < 4; i++) {
+        let eNombre;
+        do{
+            eNombre = SaisirValeurNumerique("Entrez le nombre " + (i + 1) + " de votre proposition (compris entre 1 et 4)");
+        } while (eNombre < 1 || eNombre > 4 || isNaN(eNombre));
+        tPropositions.push(eNombre);
+    }
+    return tPropositions;
+}
+
+function verifierBienPlaces(pCombinaisons,pPropositions) { // !!! Attention! Lorsque l'on passe un tableau en paramètre à une fonction, ce n'est pas une copie de ce que contient le tableau qui est envoyé à la fonction mais bien le tableau lui même (contrairement aux variables). Toute modification apportée au tableau DANS la fonction sera répércuté sur le tableau EN DEHORS de la fonction.
+    let eBienPlaces = 0;
+    // On parcourt chaque case des propositions
+    for (var i = 0; i < pPropositions.length; i++) {
+        // Si le chiffre de la proposition est le même que celui de la combinaison
+        if (pPropositions[i] == pCombinaisons[i]){
+            eBienPlaces++;
+            // Assignation d'une valeur hors-limite pour le chiffre trouvé en bonne position.
+            pCombinaisons[i] = 5;
+            pPropositions[i] = 5;
+        }
+    }
+    return eBienPlaces;
+}
+function verifierMalPlaces(pCombinaisons,pPropositions) {
+    let eMalPlaces = 0;
+    // On parcourt le tableau des propositions
+    for (var i = 0; i < pPropositions.length; i++) {
+        // On s'assure que la case actuelle ne contient pas une valeur hors-limite
+        if(pPropositions[i] >= 1 && pPropositions[i] <= 4)
+            // on vérifie si le chiffre de la case actuelle est présent dans le tableau des combinaisons
+            if (pCombinaisons.indexOf(pPropositions[i]) != -1){
+                eMalPlaces++;
+                // Récupération de l'index du chiffre dans la tableau des combinaisons pour...
+                let eIndex = pCombinaisons.indexOf(pPropositions[i]);
+                // Assignation d'une valeur hors-limite pour le chiffre trouvé en mauvaise position.
+                pCombinaisons[eIndex] = 0;
+                pPropositions[i] = 0;
+            }
+    }
+    return eMalPlaces;
+}
+
+// Gestion d'une manche (une proposition jusqu'à la découverte de la combinaison ou l'atteinte du nombre de coups autorisés)
+function jouerManche(pCombinaison, pNbreCoups){
+    let bGagne = false;
+    let eTentatives = 0;
+    let eBienPlaces = 0;
+    let eMalPlaces = 0;
+    // Boucle répétant chaque tentatives de deviner la combinaison
+    do{
+        // Copie du tableau de combinaison pour faire les vérifications
+        let tCombinaison = pCombinaison.slice();
+        let tPropositions = saisirCombinaison();
+        eTentatives++;
+        let tPropositions2 = [];
+        // copie de la proposition pour les mêmes raisons
+        tPropositions2 = tPropositions.slice();
+
+        // Vérification des nombres bien placés (en passant les copies de nos tableaux)
+        eBienPlaces = verifierBienPlaces(tCombinaison,tPropositions2);
+
+        // Vérification des nombres corrects mais mal placés (en passant les copies de nos tableaux modifiés par la vérification des chiffres bien placés)
+        eMalPlaces = verifierMalPlaces(tCombinaison,tPropositions2);
+
+        console.log("Nombre de chiffres bien placés: " + eBienPlaces);
+        console.log("Nombre de chiffres mal placés: " + eMalPlaces);
+        console.log("Il vous reste " + (pNbreCoups - eTentatives) + " tentatives");
+    } while (eTentatives < pNbreCoups && eBienPlaces < tCombinaison.length);
+    
+    // Comme on ne peut renvoyer qu'un seul résultat, on renvoie le nombre de tentatives qui indiquera le résultat de la partie.
+    return eTentatives;
+}
+
+let bContinuer = false;
+let tCombinaison = [];
+
+console.log("Bienvenue au jeu du Mastermind");
+console.log("Avant de démarrer votre partie, vous allez pouvoir la configurer");
+
+// Boucle principale du programme.
+do {
+    let eNbreCoups = SaisirValeurNumerique("Combien de tentatives sont autorisées pour chaque manche?");
+    let eNbreManche = SaisirValeurNumerique("Combien de manches voulez-vous jouer?");
+    let eTentatives = 0;
+
+    // Boucle de gestion des manches.
+    do{
+        console.log("Nouvelle manche");
+        // Réinitialisation de la combinaison à chaque début de manche
+        // tCombinaison = [4,2,1,3];
+        tCombinaison = genererCombinaisonAleatoire(1,4);
+        console.log(tCombinaison);
+
+        // Jeu
+        eTentatives = jouerManche(tCombinaison,eNbreCoups);
+        
+        // si le nombre de tentatives est inférieur au nombre de coups autorisés, c'est qu'on a trouvé la combinaison.
+        if (eTentatives < eNbreCoups){
+            console.log("Vous avez gagné en " + eTentatives + " tentatives.");
+        }
+        else{
+            console.log("vous n'avez pas trouvé la combinaison qui était : " + tCombinaison);
+        }
+        eNbreManche--;
+    } while (eNbreManche > 0);
+    // Demande de nouvelle partie
+    bContinuer = continuerPartie();
+} while (bContinuer);

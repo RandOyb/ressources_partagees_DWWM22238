@@ -20,59 +20,59 @@ function SaisieNumerique(pMessage){
     return saisie;
 }
 
-// function heureEstValide(pHeures){
-//     console.log(pHeures); //15
-//     if((pHeures < 0) || (pHeures >= 24)){
-//         alert("Mauvaise entrée. Veuillez redonner un nombre.");
-//         return false;
-//     }
-//     else {
-//         return true;
-//     }
-// }
+function heureEstValide(pHeures){
+    console.log(pHeures); //15
+    if((pHeures < 0) || (pHeures >= 24)){
+        alert("Mauvaise entrée. Veuillez redonner un nombre.");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 
-// function minuteEstValide(pMinutes){
-//     if((pMinutes < 0) || (pMinutes >= 60)){
-//         alert("Mauvaise entrée. Veuillez redonner un nombre.");
-//         return false;
-//     }
-//     else {
-//         return true;
-//     }
-// }
+function minuteEstValide(pMinutes){
+    if((pMinutes < 0) || (pMinutes >= 60)){
+        alert("Mauvaise entrée. Veuillez redonner un nombre.");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 
-// // Affectation et demande de saisie de l'utilisateur
-// let heureValide;
-// do {
-//     heures = SaisieNumerique("Quelle heure est-il? (donnez un nombre d'heures entre 0 et 23)");
+// Affectation et demande de saisie de l'utilisateur
+let heureValide;
+do {
+    heures = SaisieNumerique("Quelle heure est-il? (donnez un nombre d'heures entre 0 et 23)");
 
-//     heureValide = heureEstValide(heures);
-//     // console.log(heures);
-//     // console.log(heureValide);
+    heureValide = heureEstValide(heures);
+    // console.log(heures);
+    // console.log(heureValide);
 
-// } while (isNaN(heures) || !heureValide);
-// // } while (isNaN(heures) || heureValide == false);
+} while (isNaN(heures) || !heureValide);
+// } while (isNaN(heures) || heureValide == false);
 
-// do {
-//     minutes = SaisieNumerique("Quelle heure est-il? (donnez un nombre de minutes entre 0 et 59)");
+do {
+    minutes = SaisieNumerique("Quelle heure est-il? (donnez un nombre de minutes entre 0 et 59)");
     
-// } while (isNaN(minutes) || !minuteEstValide(minutes));
+} while (isNaN(minutes) || !minuteEstValide(minutes));
 
-// // On ajoute une minute
-// minutes++; // minute = minute + 1
+// On ajoute une minute
+minutes++; // minute = minute + 1
 
-// // Mise à jour de l'heure
-// if (minutes == 60) {
-//     minutes = 0;
-//     heures++;
+// Mise à jour de l'heure
+if (minutes == 60) {
+    minutes = 0;
+    heures++;
 
-//     if (heures == 24){
-//         heures = 0;
-//     }
-// }
+    if (heures == 24){
+        heures = 0;
+    }
+}
 
-// // Affichage de l'heure
-// console.log("Dans une minute, il sera " + heures + ":" + minutes + ".");
+// Affichage de l'heure
+console.log("Dans une minute, il sera " + heures + ":" + minutes + ".");
 
 
 /* Un magasin de reprographie facture :
@@ -85,32 +85,32 @@ function SaisieNumerique(pMessage){
 
 Écrivez un algorithme qui demande à l'utilisateur le nombre de photocopies effectuées et qui affiche la facture correspondante.
 */
-// let nombre;
-// let prix;
+let nombre;
+let prix;
 
-// do {
-//     nombre = SaisieNumerique("Nombres de copies: ");
-// } while(nombre <= 0 || isNaN(nombre));
+do {
+    nombre = SaisieNumerique("Nombres de copies: ");
+} while(nombre <= 0 || isNaN(nombre));
 
-// function prixCopie(pNombre) {
-//     let total;
-//     if( pNombre <= 10) {
-//         total = pNombre * 0.1;
-//     }
-//     else {
-//         if(pNombre <= 30){
-//             total = 1 + (pNombre - 10) * 0.09;
-//         }
-//         else {
-//             total = 1 + 1.8 + (pNombre - 30) * 0.08;
-//         }
-//     }
-//     return total;
-// }
+function prixCopie(pNombre) {
+    let total;
+    if( pNombre <= 10) {
+        total = pNombre * 0.1;
+    }
+    else {
+        if(pNombre <= 30){
+            total = 1 + (pNombre - 10) * 0.09;
+        }
+        else {
+            total = 1 + 1.8 + (pNombre - 30) * 0.08;
+        }
+    }
+    return total;
+}
 
-// prix = prixCopie(nombre);
+prix = prixCopie(nombre);
 
-// console.log("Vous avez demandé " + nombre + " copies. Cela vous coutera : " + prix + "€");
+console.log("Vous avez demandé " + nombre + " copies. Cela vous coutera : " + prix + "€");
 
 
 
@@ -126,62 +126,62 @@ Les habitants de Zorglub paient l'impôt selon les règles suivantes :
 
 Le programme demandera donc l'âge et le sexe du Zorglubien, et se prononcera donc ensuite sur le fait que l'habitant est imposable ou non.
 */
-// function getGenreFH(message) {
-//     let result = prompt(message).toLocaleUpperCase();
-//     while (result != "H" && result != "F") {
-//         alert(
-//             "seuls les genres hommes(H) et Femmes (F) sont gérés par notre plateforme. Désolé !"
-//         );
-//         result = prompt(message).toLocaleUpperCase();
-//     }
-//     return result;
-// }
+function getGenreFH(message) {
+    let result = prompt(message).toLocaleUpperCase();
+    while (result != "H" && result != "F") {
+        alert(
+            "seuls les genres hommes(H) et Femmes (F) sont gérés par notre plateforme. Désolé !"
+        );
+        result = prompt(message).toLocaleUpperCase();
+    }
+    return result;
+}
 
-// let genre;
-// let age;
+let genre;
+let age;
 
-// do {
-//     age = SaisieNumerique("Entrez votre age: ");
-// } while(age < 0 || isNaN(age));
+do {
+    age = SaisieNumerique("Entrez votre age: ");
+} while(age < 0 || isNaN(age));
 
-// genre = getGenreFH("Quel est votre genre: ");
+genre = getGenreFH("Quel est votre genre: ");
 
-// function payeImpots(pGenre, pAge){
-//     let paye;
-//     if(pGenre == "H" && pAge > 20){
-//         // console.log("Vous payez l'impôt");
-//         paye = true;
-//     }
-//     else if (pGenre == "F" && pAge >= 18 && pAge <= 35){
-//         // console.log("Vous payez l'impôt");
-//         paye = true;
-//     }
-//     else{
-//         // console.log("Vous ne payez l'impôt");
-//         paye = false;
-//     }
-//     return paye;
-// }
+function payeImpots(pGenre, pAge){
+    let paye;
+    if(pGenre == "H" && pAge > 20){
+        // console.log("Vous payez l'impôt");
+        paye = true;
+    }
+    else if (pGenre == "F" && pAge >= 18 && pAge <= 35){
+        // console.log("Vous payez l'impôt");
+        paye = true;
+    }
+    else{
+        // console.log("Vous ne payez l'impôt");
+        paye = false;
+    }
+    return paye;
+}
 
-// let impots = payeImpots(genre,age);
-// if(impots){
-//     console.log("Vous payez l'impôt");
-// }
-// else {
-//     console.log("Vous ne payez pas l'impôt");
-// }
+let impots = payeImpots(genre,age);
+if(impots){
+    console.log("Vous payez l'impôt");
+}
+else {
+    console.log("Vous ne payez pas l'impôt");
+}
 
-// // -----------------------
-// age = prompt ("Quelle âge avez-vous") * 1 ;
-// let sexe = prompt ("Quelle est votre sexe (homme/femme) ?") ;
+// -----------------------
+age = prompt ("Quelle âge avez-vous") * 1 ;
+let sexe = prompt ("Quelle est votre sexe (homme/femme) ?") ;
 
-// if ((sexe == "homme" && age > 20) || (sexe == "femme" && age >= 18 && age <= 35)) {
-//     console.log("Navré mais ici ce n'est pas un paradis fiscal, vous êtes imposable");
-// }
+if ((sexe == "homme" && age > 20) || (sexe == "femme" && age >= 18 && age <= 35)) {
+    console.log("Navré mais ici ce n'est pas un paradis fiscal, vous êtes imposable");
+}
 
-// else {
-//     console.log("une loi de fiscalisation est en cours pour vous, mais pour l'heure, vous n'êtes pas imposable ");
-// }
+else {
+    console.log("une loi de fiscalisation est en cours pour vous, mais pour l'heure, vous n'êtes pas imposable ");
+}
 
 
 /*
@@ -203,44 +203,44 @@ Cet algorithme traitera ensuite le candidat A (et uniquement lui), il dira si :
 
     il se trouve en ballottage défavorable (il participe au second tour sans avoir été en tête au premier tour).
 */
-// let fScoreA, fScoreB, fScoreC, fScoreD;
-// let bAGagne, bAutreGagne, bAEnTete, bScoreInsuffisant;
+let fScoreA, fScoreB, fScoreC, fScoreD;
+let bAGagne, bAutreGagne, bAEnTete, bScoreInsuffisant;
 
-// do {
-//     fScoreA = SaisieNumerique("Entrez le score du candidat A: ");
-// } while(fScoreA < 0 || isNaN(fScoreA));
-// do {
-//     fScoreB = SaisieNumerique("Entrez le score du candidat B: ");
-// } while(fScoreB < 0 || isNaN(fScoreB));
-// do {
-//     fScoreC = SaisieNumerique("Entrez le score du candidat C: ");
-// } while(fScoreC < 0 || isNaN(fScoreC));
-// do {
-//     fScoreD = SaisieNumerique("Entrez le score du candidat D: ");
-// } while(fScoreD < 0 || isNaN(fScoreD));
+do {
+    fScoreA = SaisieNumerique("Entrez le score du candidat A: ");
+} while(fScoreA < 0 || isNaN(fScoreA));
+do {
+    fScoreB = SaisieNumerique("Entrez le score du candidat B: ");
+} while(fScoreB < 0 || isNaN(fScoreB));
+do {
+    fScoreC = SaisieNumerique("Entrez le score du candidat C: ");
+} while(fScoreC < 0 || isNaN(fScoreC));
+do {
+    fScoreD = SaisieNumerique("Entrez le score du candidat D: ");
+} while(fScoreD < 0 || isNaN(fScoreD));
 
-// bAGagne = fScoreA >= 50;
-// bAutreGagne = fScoreB >= 50 || fScoreC >= 50 || fScoreD >= 50;
-// bScoreInsuffisant = fScoreA < 12.5;
-// bAEnTete = fScoreA > fScoreB && fScoreA > fScoreC && fScoreA > fScoreD;
+bAGagne = fScoreA >= 50;
+bAutreGagne = fScoreB >= 50 || fScoreC >= 50 || fScoreD >= 50;
+bScoreInsuffisant = fScoreA < 12.5;
+bAEnTete = fScoreA > fScoreB && fScoreA > fScoreC && fScoreA > fScoreD;
 
-// if(bAGagne){
-//     console.log("A gagne au premier tour!");
-// }
-// else{
-//     if(bAutreGagne || bScoreInsuffisant){
-//         console.log("A n'a pas gagné");
-//     }
-//     else {
-//         if(bAEnTete){
-//             console.log("A est en ballotage favorable");
-//         }
-//         else{
-//             console.log("A est en ballotage défavorable");
-//         }
-//     }
+if(bAGagne){
+    console.log("A gagne au premier tour!");
+}
+else{
+    if(bAutreGagne || bScoreInsuffisant){
+        console.log("A n'a pas gagné");
+    }
+    else {
+        if(bAEnTete){
+            console.log("A est en ballotage favorable");
+        }
+        else{
+            console.log("A est en ballotage défavorable");
+        }
+    }
 
-// }
+}
 
 /*
 Une compagnie d'assurance automobile propose à ses clients quatre familles de tarifs identifiables par une couleur, du moins au plus onéreux :
@@ -266,59 +266,59 @@ De plus, pour encourager la fidélité des clients acceptés, la compagnie propo
 Écrire l'algorithme permettant de saisir les données nécessaires et de traiter ce problème. Avant de se lancer à corps perdu dans cet exercice, on pourra réfléchir un peu et s'apercevoir qu'il est plus simple qu'il n'en a l'air !
 */
 
-// let eAge, eDureePermis, eNbreAccidents, eDureeAssurance;
-// let bJunior, bJeuneConducteur, bConditionAssurance;
-// let ePointsMalus;
-// let sTarif;
+let eAge, eDureePermis, eNbreAccidents, eDureeAssurance;
+let bJunior, bJeuneConducteur, bConditionAssurance;
+let ePointsMalus;
+let sTarif;
 
-// do {
-//     eAge = SaisieNumerique("Entrez votre âge: ");
-// } while(eAge < 18 || isNaN(eAge));
-// do {
-//     eDureePermis = SaisieNumerique("Depuis combien d'années avez-vous le permis?: ");
-// } while(eDureePermis < 0 || isNaN(eDureePermis));
-// do {
-//     eNbreAccidents = SaisieNumerique("Combien d'accidents avez-vous eu?: ");
-// } while(eNbreAccidents < 0 || isNaN(eNbreAccidents));
-// do {
-//     eDureeAssurance = SaisieNumerique("Depuis combien d'années avez-vous une assurance chez nous?: ");
-// } while(eDureeAssurance < 0 || isNaN(eDureeAssurance));
+do {
+    eAge = SaisieNumerique("Entrez votre âge: ");
+} while(eAge < 18 || isNaN(eAge));
+do {
+    eDureePermis = SaisieNumerique("Depuis combien d'années avez-vous le permis?: ");
+} while(eDureePermis < 0 || isNaN(eDureePermis));
+do {
+    eNbreAccidents = SaisieNumerique("Combien d'accidents avez-vous eu?: ");
+} while(eNbreAccidents < 0 || isNaN(eNbreAccidents));
+do {
+    eDureeAssurance = SaisieNumerique("Depuis combien d'années avez-vous une assurance chez nous?: ");
+} while(eDureeAssurance < 0 || isNaN(eDureeAssurance));
 
-// bJunior = eAge < 25;
-// bJeuneConducteur = eDureePermis < 2;
-// bConditionAssurance = eDureeAssurance >= 5;
-// ePointsMalus = eNbreAccidents;
+bJunior = eAge < 25;
+bJeuneConducteur = eDureePermis < 2;
+bConditionAssurance = eDureeAssurance >= 5;
+ePointsMalus = eNbreAccidents;
 
-// if(bJunior){
-//     ePointsMalus++;
-// }
+if(bJunior){
+    ePointsMalus++;
+}
 
-// if(bJeuneConducteur)
-//     ePointsMalus++;
+if(bJeuneConducteur)
+    ePointsMalus++;
 
-// if(ePointsMalus < 3 && bConditionAssurance){
-//     ePointsMalus--;
-// }
+if(ePointsMalus < 3 && bConditionAssurance){
+    ePointsMalus--;
+}
 
-// switch(ePointsMalus){
-//     case -1:
-//         sTarif = "Bleu";
-//         break;
-//     case 0:
-//         sTarif = "Vert";
-//         break;
-//     case 1:
-//         sTarif = "Orange";
-//         break;
-//     case 2:
-//         sTarif = "rouge";
-//         break;
-//     default:
-//         sTarif = "Refusé";
-//         break;
-// }
+switch(ePointsMalus){
+    case -1:
+        sTarif = "Bleu";
+        break;
+    case 0:
+        sTarif = "Vert";
+        break;
+    case 1:
+        sTarif = "Orange";
+        break;
+    case 2:
+        sTarif = "rouge";
+        break;
+    default:
+        sTarif = "Refusé";
+        break;
+}
 
-// console.log("Votre tarif est le :" + sTarif);
+console.log("Votre tarif est le :" + sTarif);
 
 
 /*
@@ -332,7 +332,6 @@ Il n'est sans doute pas inutile de rappeler rapidement que :
 
 Pour exprimer correctement en pseudo-code l'idée qu'un nombre A est divisible par un nombre B. Il suffit d'indiquer que le reste de la division entière de A par B est égal à zéro. Cette opération s'appelle le modulo. Nous pouvons donc dire que A est divisible par B si : Modulo(A,B) = 0
 */
-// 
 
 let eJour, eMois, eAnnee;
 let bBissextile;

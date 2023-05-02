@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HTML 5 | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+			
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px; 			
+		}
+					
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}	
+
+        .code 
+		{
+		    background-color: #000; 
+			color: yellow;
+			font-family: 'Courier New';	
+            font-size: 10px;
+		}   
+		
+		/* Suppression bordure blanche du thème */
+		img {
+		    border: none !important;
+		}
+        			
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-transition="convex" data-background="#87bd26">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA">				 					
+				</section>
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Hyper Text Markup Langage</h1>				    	
+					<img src="images/html5_logo.svg.png" width="256" height="256" alt="Logo HTML5">
+				</section>
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Définition</h1>
+					<ul>
+						<li>Langage de description de pages hypertextes</li>
+						<li class="fragment">Permet de décrire le contenu d'une page : langage sémantique</li>
+						<li class="fragment">Description à l'aide de balises (= tag) : nom + chevrons ouvrant et fermant : <code class="code">&lt;div&gt;</code></li>						
+						<li class="fragment">Fichier avec l'extension <code class="code">.html</code></li>		
+                        <li class="fragment">En HTML 5 : agencement et habillage via feuilles de styles CSS (polices, couleurs, dimensions...).</li>								
+					</ul>							
+				</section>
+								
+				<!--  Slide verticale -->
+				<section data-transition="convex" data-background="#87bd26">
+					<section data-background="#87bd26">
+						<h1>Structure HTML</h1>
+						<ul>
+							<li>Métadonnées (doctype, title, description...) regroupées dans la zone <code class="code">&lt;head&gt;</code></li>
+					        <li class="fragment">Contenu compris dans la balise <code class="code">&lt;body&gt;</code></li>
+                            <li class="fragment">Contenu découpé en zones (grille) : entête, menus, titres, lignes/colonnes, pied de page...</li>							
+						</ul>						
+					</section>
+					<section data-transition="convex" data-background="#87bd26">
+						<h1>Structure HTML</h1>						
+						<img src="images/html_zone_simple.jpg" alt="HTML structure simple">														
+					</section>
+					<section data-transition="convex" data-background="#87bd26">
+						<h1>Structure HTML</h1>						
+						<img src="images/html_zone_complexe.jpg" alt="HTML structure complexe">														
+					</section>
+					<section data-transition="convex" data-background="#87bd26">
+						<h1>Structure HTML</h1>						
+						<img src="images/html5_zone_responsive.jpg" alt="HTML structure responsive">														
+					</section>					
+				</section>
+				<!-- fin Slides verticales -->					
+										
+				<section data-transition="convex" data-background="#87bd26">
+						<h1>Syntaxe</h1>
+						<ul>
+							<li>Une balise HTML possède des attributs</li>
+							<li class="fragment">Certaines balises se ferment par <code class="code">&lt;tag&gt;...&lt/tag&gt;</code></li>
+							<li class="fragment">D'autres sont "autofermantes" : <br><code class="code">&lt;tag attribut=""&gt;</code></li>
+							<li class="fragment">En HTML 5, il n'y a plus de balises qui se ferment avec <code class="code">/&gt;</code></li>
+							<li class="fragment">Certains attributs n'acceptent que des valeurs précises</li>
+						</ul>							
+					</section>			
+		       
+				<section data-transition="convex" data-background="#87bd26">
+						<h1>Documentation</h1>
+						<ul>
+						    <li><a href="https://www.w3schools.com/tags/default.asp" title="W3Schools" target="_blank">W3Schools</a></li>
+							<li class="fragment"><a href="https://developer.mozilla.org/fr/docs/Web/Guide/HTML/HTML5/Liste_des_%C3%A9l%C3%A9ments_HTML5" title="MDN" target="_blank">MDN</a> (Mozilla Developer Network)</a></li>
+							<li class="fragment"><a href="https://www.alsacreations.com/tutoriels/" title="Alsacréations" target="_blank">Alsacréations/tutoriels</a></li>
+						</ul> 								
+				</section>				        	
+					
+				<section data-transition="convex" data-background="#87bd26">
+						<h1>Exemples</h1>
+						<ul>
+							<li><code class="code">&lt;br&gt;</code></li>
+                        	<li class="fragment"><code class="code">&lt;p&gt;Hello world&lt;/p&gt;</code>					
+						    <li class="fragment"><code class="code">&lt;img src="image.jpg" alt="Ma photo" title="Moi en vacances"&gt;</code></li>
+						</ul>						
+     			</section>          
+
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Exemples</h1>
+					<a href="fichiers/exemple_01_base.html" title="Exemple de code" target="_blank">Page complète</a>					
+				</section>				
+				
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Contenu</h1>
+					<ul>
+						<li>Texte/données, présentés sous différentes formes : listes, tableaux...</li>
+						<li class="fragment">Médias : images, vidéos, animations (Flash, Canvas)</li>		
+						<li class="fragment">Formulaires : balises <code class="code">&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code class="code">&lt;select&gt;</code>, <code class="code">&lt;button&gt;</code>...</li>		
+						<li class="fragment">Scripts : javascript, applets Java</li>		
+					</ul>						
+				</section>				
+				<section data-transition="convex"  data-background="#87bd26">
+					<h1>2 types de balises</h1>
+					<ul>
+						<li>Type <b>bloc</b> : occupe 100% de la largeur (<code class="code">&lt;div&gt;</code>, <code class="code">&lt;p&gt;</code>, titres, listes, tableaux...)</li>
+						<li class="fragment">Type <b>en ligne</b> (= inline) : uniquement la largeur du texte (<code class="code">&lt;span&gt;</code>, <code class="code">&lt;p&gt;</code>...)</li>						
+					</ul>						
+				</section>				
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Apport de HTML 5</h1>
+					<ul>
+						<li>Nouvelles balises (sectionnement, <code class="code">&lt;video&gt;</code>)</li>
+						<li class="fragment">Nouveaux attributs ou valeurs d'attributs (<code class="code">required</code>, <code class="code">number</code> ...)</li>
+						<li class="fragment">Balises et attributs obsolètes (<code class="code">&lt;font&gt;</code>, <code class="code">align</code>...)</li>
+						<li class="fragment">API : Géolocalisation, Drag & Drop, Notifications...</li>		
+						<li class="fragment">Web Components : création de nouveaux éléments, templates...</li>		
+						<li class="fragment">Canvas : animations en Javascript (<a href="https://codepen.io/ara_node/pen/EwfpL" title="Exemple Canvas" target="_blank">exemple</a>...)</li>		
+					</ul>						
+				</section>				
+				<section data-transition="convex" data-background="#87bd26">
+					<h1>Sectionnement</h1>	
+					<ul>
+					   <li>Balises <code class="code">&lt;section&gt;</code>, <code class="code">&lt;article&gt;</code>, <code class="code">&lt;aside&gt;</code></li>
+					   <li class="fragment">Balises <code class="code">&lt;header&gt;</code>, <code class="code">&lt;footer&gt;</code></li>
+					   <li class="fragment">Titres : balises hiérarchiques : <code class="code">&lt;h1&gt;</code> à <code class="code">&lt;h6&gt;</code></li>
+					</ul>					
+				</section>		
+                <section data-transition="convex" data-background="#87bd26">
+					<h1>Bonnes pratiques</h1>
+					<ul>
+						<li>Code "propre", balises bien fermées</li>
+						<li class="fragment">Respect de la sémantique = lecture vocale, référencement</li>
+						<li class="fragment">Utilisation de la balise adéquate (pas trop de <code class="code">&lt;div&gt;</code>)</li>
+						<li class="fragment">S'assurer de la compatibilité navigateur (<a href="https://www.w3schools.com/html/html_form_input_types.asp" title="Exemple">exemple</a>)</li>																	
+					</ul>						
+				</section>			
+                <section data-transition="convex" data-background="#87bd26">
+					<h1>Outils</h1>
+					<ul>
+						<li>Inspecteur le code des navigateurs (<code class="code">F12</code>)</li>
+						<li class="fragment"><a href="https://validator.w3.org" title="Validateur W3C" target="_blank">Validateur de code W3C</a></li>											
+					</ul>						
+				</section>								
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				], 
+				
+				transition: 'convex', // none, fade, slide, convex, concave, zoom
+				
+				progress: true,		
+				// center: false,		
+			});
+		</script>
+	</body>
+</html>

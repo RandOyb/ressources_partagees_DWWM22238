@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Responsive | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section data-background="#87bd26">
+				    <h1>Le web responsive</h1>
+					<img src="images/responsive.png" alt="Responsive" title="Responsive">				 					
+				</section>
+				    
+				<section data-background="#87bd26">
+				    <h1>Problématique</h1>
+					<ul>
+					<li>Arrivée des smartphones et tablettes affichant des pages web :</li> 
+						<ul>
+							<li class="fragment">sur une multitude d’appareils</li> 
+							<li class="fragment">nombreuses dimensions d’écran</li> 
+							<li class="fragment">2 formats : portrait et paysage</li> 
+						</ul>
+                    </ul>					
+				</section>					
+                <!-- Slides verticales ---------------- -->
+                <section data-background="#87bd26">				
+					<section data-background="#87bd26">
+						<h1>Solutions</h1>
+						<ul>
+							<li class="fragment">Applications natives : Androïd, iOS : nécessite de coder X fois</li> 
+							<li class="fragment">Une version mobile sur un sous-domaine (<code>http://m.site.fr</code>) : problème de "duplicate content"</li> 
+							<li class="fragment">Page web qui se redimensionne selon le dispostif : on ne code qu'une seule fois</li> 
+						</ul>					
+					</section>	
+					<section data-background="#87bd26">
+						<h1>Solutions</h1>
+							
+					</section>	
+                </section>
+				<!-- fin Slides verticales ---------------- -->				
+				<section data-background="#87bd26">
+				    <h1>Responsive : définition</h1>
+					<ul>
+					    <li class="fragment">"responsive design" , traduire "design adaptatif"</li> 
+					    <li class="fragment">Une manière de concevoir un site web pour que son contenu s'adapte automatiquement au terminal utilisé</li> 
+					</ul>					
+				</section>		
+
+				 <section data-background="#87bd26">
+				    <h1>Exemples</h1>
+					<img src="images/responsive_demo.gif" alt="Démo Responsive" title="Démo Responsive">				 					
+				</section>			
+                <section data-background="#87bd26">
+				    <h1>Exemples</h1>
+					<ul>
+					    <!-- https://dequeuniversity.com/library/responsive/1 -->
+					    <li><a href="https://dequeuniversity.com/library/responsive/1-non-responsive" title="Site non responsive" target="_blank">Site non responsive</a></li> 
+					    <li><a href="https://dequeuniversity.com/library/responsive/1-responsive" title="Site responsive" target="_blank">Un site responsive</a></li> 
+					</ul>					
+				</section>						
+				 <section data-background="#87bd26">
+				    <h1>Importance</h1>
+					<ul>
+					    <li>Depuis 2015, trafic web sur mobiles > PC</li> 
+					    <li class="fragment">Référencement : Google indexe en priorité les sites "mobile-friendly"</li> 
+						<li class="fragment">Inconcevable de créer un site non lisible sur mobile</li> 
+						<li class="fragment">Toujours + d’un site sur 2 non mobile (Yooda, mai 2016)</li> 
+					</ul>								
+				</section>						
+				<section data-background="#87bd26">
+				    <h1>Techniques à mettre en oeuvre</h1>
+				    <ul>
+ 				        <li>Viewport</li> 
+					    <li class="fragment">Points d'arrêt</li> 
+					    <li class="fragment">Media queries CSS</li>
+						<li class="fragment">Système de grille, facultatif mais utile</li>
+                 	</ul>				
+				</section>	
+				<!-- Slides verticales ---------------- -->
+                <section data-background="#87bd26">				
+					<section data-background="#87bd26">
+						<h1>Le viewport</h1>
+						 <ul>
+							<li>Surface utilisable ("pixels CSS")</li>		
+							<li class="fragment">Différent de la résolution (surface physique)</li> 
+							<li class="fragment">Balise meta (donc dans &lt;head&gt;)</li>						
+						</ul>				 				
+					</section>		
+					<section data-background="#87bd26">
+						<h1>Le viewport</h1>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
+							</code>
+						</pre>				 				
+					</section>		
+				</section>
+				<!-- fin Slides verticales ---------------- -->
+				
+				<section data-background="#87bd26">
+				    <h1>Points d'arrêt = breakpoints</h1>
+					 <ul>
+ 				        <li>Limites de largeur des différents dispositifs</li>		                        			
+					</ul>				 				
+				    <img src="images/breakpoints_tableau.png" alt="Breakpoints" title="Breakpoints">		
+				</section>		
+				
+				<section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					 <ul>
+ 				        <li>Spécifications additionnelles CSS (2012)</li>		
+                        <li class="fragment">Cible un type de média, une largeur, l'orientation...</li>				
+                        <li class="fragment">Bloc d’instructions CSS commençant par @media</li>						
+					</ul>					    
+				</section>	
+                <section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							@media screen and (max-width: 576px) 
+							{ 
+								h1 
+								{ 
+									font-size : 20px; 
+								} 
+							} 
+						</code>
+					</pre>	
+					<ul>
+ 				        <li>Se lit : pour les écrans inférieurs à 576px</li>		
+                        <li>/!\ interprétation : sens max/min</li>				
+                        <li>/!\ 1 bloc supplémentaire d’accolades</li>						
+					</ul>					    
+				</section>							
+
+                 <section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							@media screen and (max-width: 576px) 
+							{ 
+								h1 
+								{ 
+									font-size : 20px; 
+								} 
+							} 
+
+							@media screen and (max-width: 768px) 
+							{ 
+								h1 
+								{ 
+									font-size : 40px; 
+								} 
+							} 
+						</code>
+					</pre>						    
+				</section>			
+				
+				<section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						@media print and (min-width: 768px) 
+						{ 
+						    * 
+							{ 
+								color: #000; 
+							} 
+						} 
+						</code>
+					</pre>						    
+				</section>			
+				
+				<section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					 <ul>
+ 				        <li>2 types d'appels</li>		
+                        <li class="fragment">Fichier CSS externe contenant toutes les media queries</li>	
+						<li class="fragment">Séparation selon le dispositif, ciblé par l'attribut "media" de la balise &lt;link&gt;</li>	
+					</ul>			
+					<pre>
+						<code class="hljs" data-trim contenteditable><link rel="stylesheet" media="screen and (max-width: 575px)" href="mobile.css">
+						<link rel="stylesheet" media="screen and (min-width: 576px)" href="tablette.css">
+						<link rel="stylesheet" media="screen and (min-width: 768px)" href="desktop.css"> 
+						</code>
+					</pre>						    
+				</section>			
+				
+				<section data-background="#87bd26">
+				    <h1>Media queries CSS</h1>
+					 <ul>
+ 				        <li>Terminaux : screen, print, projection…</li>		
+                        <li class="fragment">Sélecteurs : width, orientation, color… + préfixes "min-" et "max-"</li>	
+						<li class="fragment">Règles combinées, opérateurs and, not, only</li>	
+					</ul>			
+					<pre>
+						<code class="hljs" data-trim contenteditable><link rel="stylesheet" media="screen and (max-width: 575px)" href="mobile.css">
+						<link rel="stylesheet" media="screen and (min-width: 576px)" href="tablette.css">
+						<link rel="stylesheet" media="screen and (min-width: 768px)" href="desktop.css"> 
+						</code>
+					</pre>						    
+				</section>			
+				
+				<section data-background="#87bd26">
+				    <h1>Système de grille</h1>
+					 <ul>
+ 				        <li>Découpe de la largeur en blocs de largeur égale</li>		
+                        <li class="fragment">Lignes + colonnes = cellules</li>	
+						<li class="fragment">Fonctionnalité de base des frameworks CSS (Bootstrap)</li>	
+					</ul>										    
+				</section>		
+
+                <section data-background="#87bd26">
+				    <h1>Système de grille</h1>
+					 <ul>
+ 				        <li>Découpe de la largeur en blocs de largeur égale</li>		
+                        <li class="fragment">Lignes + colonnes = cellules (tableau)</li>	
+						<li class="fragment">Fonctionnalité de base des frameworks CSS (Bootstrap)</li>	
+					</ul>										    
+				</section>			
+
+                <section data-background="#87bd26">
+				    <h1>Mobile first</h1>
+					 <ul>
+ 				        <li>Philisophie qui préconise d'intégrer en premier les contraintes du mobile. </li>		
+                        <li class="fragment">Mobile : avec le moins d’éléments possibles, pour un chargement rapide</li>	
+						<li class="fragment">Puis ajout d’éléments selon la taille d’écran</li>	
+						<li class="fragment">Adopté par Google, Bootstrap...</li>	
+					</ul>										    
+				</section>							
+				
+				 <section data-background="#87bd26">
+				    <h1>Mobile first</h1>
+					 <ul>
+ 				        <li>Philisophie qui préconise d'intégrer en premier les contraintes du mobile. </li>		
+                        <li class="fragment">Mobile : avec le moins d’éléments possibles, pour un chargement rapide</li>	
+						<li class="fragment">Puis ajout d’éléments selon la taille d’écran</li>	
+						<li class="fragment">Adopté par Google, Bootstrap...</li>	
+					</ul>										    
+				</section>			
+
+                <section data-background="#87bd26">
+				    <h1>Penser responsive</h1>
+				    <p>Redimmensionner aussi :</p>
+					 <ul>
+ 				        <li>La taille des polices de caractères.</li>		
+                        <li class="fragment">Médias : images, vidéos, Flash, Canvas...</li>	
+						<li class="fragment">Tableaux HTML</li>	
+						<li class="fragment">Formulaires</li>	
+					</ul>										    
+				</section>	
+
+                 <section data-background="#87bd26">
+				    <h1>Outils développeurs</h1>
+					<p>Vues adpatatives :</p>
+				    <ul>
+ 				        <li>Chrome : <code>F12</code>, <code>Ctrl + Shift + M</code></li>		
+                        <li>Firefox : <code>Ctrl + Shift + M</code></li>						
+					</ul>										    
+				</section>							
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+											
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>

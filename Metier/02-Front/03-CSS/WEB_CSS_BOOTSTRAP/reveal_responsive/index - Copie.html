@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Responsive | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section data-background="#87bd26">
+				    <h1>Le web responsive</h1>
+					<img src="images/responsive.png" alt="Responsive" title="Responsive">				 					
+				</section>
+				    
+				<section data-background="#87bd26">
+				    <h1>Problématique</h1>
+					<ul>
+					<li>Arrivée des smartphones et tablettes affichant des pages web :</li> 
+						<ul>
+							<li class="fragment">sur une multitude d’appareils</li> 
+							<li class="fragment">>nombreuses dimensions d’écran</li> 
+							<li class="fragment">>2 formats : portrait et paysage</li> 
+						</ul>
+                    </ul>					
+				</section>					
+                
+				<section data-background="#87bd26">
+				    <h1>Solutions</h1>
+					<ul>
+					    <li class="fragment">Coder des applications "natives" : Androïd, iOS/Swift : nécessite de coder X fois</li> 
+						<li class="fragment">Une version mobile sur un sous-domaine (http://m.site.fr) : problème de "duplicate content"</li> 
+					    <li class="fragment">Page web qui se redimensionne automatiquement selon l’appareil sur lequel elle s’affiche : on ne code qu'une seule fois</li> 
+					</ul>					
+				</section>					
+                
+				<section data-background="#87bd26">
+				    <h1>Définitions</h1>
+					<ul>
+					    <li class="fragment">Cette seconde solution s’appelle "responsive web design" , traduire "design adaptatif"</li> 
+					    <li class="fragment">Une manière de concevoir un site web pour que son contenu s'adapte automatiquement au terminal utilisé</li> 
+					</ul>					
+				</section>		
+
+				 <section data-background="#87bd26">
+				    <h1>Exemples</h1>
+					<img src="images/demo_responsive.png" alt="Démo Responsive" title="Démo Responsive">				 					
+				</section>			
+                <section data-background="#87bd26">
+				    <h1>Exemples</h1>
+					<ul>
+					    <!-- https://dequeuniversity.com/library/responsive/1 -->
+					    <li><a href="https://dequeuniversity.com/library/responsive/1-non-responsive" title="Site non responsive" target="_blank">Site non "responsive"</a></li> 
+					    <li><a href="https://dequeuniversity.com/library/responsive/1-responsive" title="Site responsive" target="_blank">Site responsive</a></li> 
+					</ul>					
+				</section>						
+				 <section data-background="#87bd26">
+				    <h1>Importance</h1>
+					<ul>
+					    <li>Depuis 2015, trafic web sur mobiles > trafic web sur PC</li> 
+					    <li class="fragment">Référencement : Google indexe en priorité les sites "mobile-friendly"</li> 
+						<li class="fragment">Inconcevable de créer un site non lisible sur mobile</li> 
+						<li class="fragment">Toujours + d’un site sur 2 non mobile (Yooda mai 2016)</li> 
+					</ul>								
+				</section>						
+				 <section data-background="#87bd26">
+				    <h1>Importance</h1>
+					<ul>
+					    <li>Depuis 2015, trafic web sur mobiles > trafic web sur PC</li> 
+					    <li class="fragment">Référencement : Google indexe en priorité les sites "mobile-friendly"</li> 
+						<li class="fragment">Inconcevable de créer un site non lisible sur mobile</li> 
+						<li class="fragment">Toujours + d’un site sur 2 non mobile (Yooda mai 2016)</li> 
+					</ul>								
+				</section>						
+				<section data-background="#87bd26">
+				    <h1>Techniques</h1>
+				    <ul>
+ 				        <li>Viewport</li> 
+					    <li class="fragment">Points d'arrêts ("Breakpoints")</li> 
+					    <li class="fragment">Media queries CSS</li>
+						<li class="fragment">Système de grille (facultatif mais recommandé</li>
+                 	</ul>				
+				</section>						
+				<section data-background="#87bd26">
+				    <h1>Points d'arrêts</h1>
+					 <ul>
+ 				        <li>"Breakpoints" : limites de largeur</li>		
+                        <li class="fragment">Points d'arrêts ("Breakpoints")</li> 
+					    <li class="fragment">Media queries CSS</li>						
+					</ul>				 				
+				</section>		
+				<section data-background="#87bd26">
+				    <h1>Points d'arrêts</h1>
+					 <ul>
+ 				        <li></li>		
+                        <li class="fragment"></li> 						
+					</ul>				 				
+				</section>		
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+											
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>

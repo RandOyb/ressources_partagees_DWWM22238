@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>  
+<meta charset="UTF-8">
+<title>Sélecteurs | Exemple CSS</title>
+<style>
+a 
+{ 
+   color: green; 
+}
+
+#contenu 
+{ 
+   text-align: center; 
+}
+
+.contour_rouge 
+{ 
+   border: 2px solid #FF0000; 
+}
+
+.uneautreclasse {
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <header>
+	<h1>Sélecteurs</h1>
+	</header>
+	<hr>
+    
+	<h2>Sélecteur de balises : affecte toutes les balises 'a' de la page</h2>
+	
+	<pre>
+	<code>a
+	{ 
+        color: green;
+	}
+	</code>
+	</pre>
+	
+	<p><a href="#" title="test">Un lien</a></p>
+	
+	<hr>
+	
+	<h2>Sélecteur classe : peut être appliqué à plusieurs éléments HTML</h2>
+	
+	<pre>
+	<code>
+	.contour_rouge 
+		{ 
+		   border: 2px solid #FF0000; 
+		}
+	</code>
+	</pre>
+	
+	<div class="contour_rouge">Un div qui a la classe '.contour_rouge'</div>
+		
+	<hr>	
+			
+	<h2>Sélecteur identifiant : affecte uniquement l'élément dont l'attribut 'id' a pour valeur 'contenu'</h2>
+	
+	<pre>
+	<code>
+	</code>
+	</pre>	
+	
+	<div id="contenu">
+	Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML. Les standards définissant CSS sont publiés par le World Wide Web Consortium (W3C).
+    </div>	
+	
+	<hr>
+	
+	<h2>Sélecteur identifiant + classes (plusieurs)</h2>
+	
+	<pre>
+	<code>
+	</code>
+	</pre>	 
+	
+	<div id="contenu" class="contour_rouge uneautreclasse">
+	Un div qui la classe .contour_rouge + la classe .uneautreclasse
+    </div>		
+</body> 
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>  
+<meta charset="UTF-8">
+<title>Cascade | HTML 5</title>
+<style>
+#winning {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.better {
+  background-color: gray;
+  border: none !important;
+}
+
+p {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+	<header>
+	<h1>La cascade en CSS : exemple<h1>
+	<hr>
+	</header>
+	
+	<pre style="background-color: #CCC">
+	<code>
+	&lt;style&gt;
+	#winning {
+	   background-color: red;
+		border: 1px solid black;
+	}
+
+	.better 
+	{
+		background-color: gray;
+		border: none !important;
+	}
+
+	p {
+		background-color: blue;
+		color: white;
+		padding: 5px;
+	}
+	&lt;/style&gt;
+	</code>
+	</pre>
+	
+	
+	<p class="better">Voici un paragraphe.</p>
+    <p class="better" id="winning">Un sélecteur qui règne sur tous !</p>
+	
+	<ol>
+ 	    <li>La 3<sup>ème</sup> règle sur les valeurs de color et padding a été appliquée, pas celle pour le background-color.</li>
+	    <li>En fait, les trois règles sont bien appliquées, mais les règles ultérieures dans l'ordre du code source prennent le pas sur les précédentes.</li>
+	    <li>Toutefois, les règles au-dessus l'emportent, car les sélecteurs d'identifiant ou de classe, plus caractérisés, ont priorité sur les sélecteurs simples</li>
+	     <li>Les deux éléments sont de la classe (class) better, mais le 2e a un id égal à winning également. Comme les ID ont toujours une caractérisation plus forte que les classes (vous ne pouvez avoir qu'un seul élément avec l'unique ID de la page, mais beaucoup d'éléments de la même classe — les sélecteurs d'ID sont d'une grande précision dans ce qu'ils ciblent), la couleur de fond rouge et l'encadrement noir de 1 pixel d'épaisseur seront donc appliqués tous deux au deuxième élément, alors que le premier élément conservera le fond gris, et aucun encadrement, comme défini par la classe.</li>
+	     <li>Le deuxième élément a bien un fond rouge, mais pas d'encadrement. Pourquoi ? En raison de la déclaration !important dans la deuxième règle — mettre cette dernière après border: none indique que cette déclaration l'emporte sur la valeur de l'encadrement de la règle précédente, même si ID a une forte caractérisation.</li>
+	</ol>	
+</body> 
+</html>

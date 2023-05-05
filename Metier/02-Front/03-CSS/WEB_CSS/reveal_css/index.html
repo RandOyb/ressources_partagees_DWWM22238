@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CSS | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section data-background="#87bd26">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA">				 					
+				</section>
+			
+			    <!--  Slide verticale -->
+				<section data-background="#87bd26">
+					<section data-background="#87bd26">
+						<img src="images/css3_logo.svg.png" width="300" height="300" alt="Logo CSS">				 					
+					</section>
+					<section data-background="#87bd26">
+						<h1>C.S.S.</h1>
+						<h2 class="fragment">Cascading Style Sheet</h2>			
+						<h2 class="fragment">Feuilles de styles en cascade</h2>			
+					</section>                
+				    <section data-background="#87bd26">
+					  <h1>C.S.S.</h1>
+						<ul>
+							<li>CSS : spécifications du W3C</li>
+							<li class="fragment">C.S.S. 1 = 1996</li>		
+							<li class="fragment">C.S.S. 3 = 2002 (officiel en 2011)</li>	     		
+							<li class="fragment">C.S.S. 4 : statut "brouillon", sortie ???</li>	     									
+						</ul>							
+					</section>			
+				</section>						
+				<!-- fin Slides verticales -->							
+
+				<section data-background="#87bd26">
+				  <h1>A quoi ça sert ?</h1>
+				    <ul>
+						<li>Le CSS permet d'appliquer des styles sur vos éléments HTML</li>
+						<li class="fragment">Les styles permettent d'influer sur l'aspect graphique des éléments</li>
+						<li class="fragment">Modifier le positionnement, les polices, les couleurs, les dimensions...</li>			
+						<li class="fragment">Fichier avec l'extension <code class="code">.css</code></li>		 					     					
+					</ul>							
+				</section>
+					
+                <section data-background="#87bd26">
+				  <h1>Exemples</h1>
+				    <ul>					
+				       <li class="fragment"><a href="exemples/01_page_sans_css.html" title="Sans CSS" target="_blank">Page sans CSS</a></li>				
+                       <li class="fragment"><a href="exemples/02_page_avec_css.html" title="Avec CSS" target="_blank">Page avec CSS</a></li>				
+   					</ul>						
+				</section>	
+											
+				<section data-background="#87bd26">
+					<h1>Syntaxe</h1>
+				<ul>
+					<li>Sélecteur + bloc d'instructions entre accolades :</li>					
+						<pre><code class="hljs" data-trim contenteditable>
+							#contenu
+							{ 
+							   color: #000000;
+							   width: 200px;							  
+							}
+						</code>		
+						</pre>		
+
+						<ul> 
+                        <li>instruction : valeur;</li>	
+                        <li>instructions (lignes) séparées par point-virgule</li>
+                        </ul>						
+				</section>	
+                <section data-background="#87bd26">
+					<h1>Syntaxe</h1>
+					<p class="text-left">Commentaires :</p> 
+                    <pre>
+						<code class="hljs" data-trim contenteditable>
+						/* Ceci est une ligne de commentaires en CSS */
+						#contenu 
+						{
+						     width: 200px;
+						}			
+
+						/* Ceci est un bloc de commentaires en CSS 
+						#contenu 
+						{
+						     width: 200px;
+						}
+						*/
+                        </code>
+					</pre>	                    					
+				</section>								
+							
+				<section data-background="#87bd26">	
+					<h1>Propriétés</h1>
+							<pre><code class="hljs" data-trim contenteditable>
+							#contenu
+							{ 							   
+							   background-color: yellow;	
+							   border: 5px solid #FF0080;
+							   color: #000000;
+							   font: 25pt 'Courier New';
+							   height: 500px;
+							   text-align: center;							   
+							   width: 50%;													   
+							}
+							</code>		
+                         </pre>
+						 <ul>
+						     <li><a href="exemples/03_proprietes.html" title="Exemple propriétés" target="_blank">Résultat</a></li>   
+                         </ul>						 
+                </section>						
+											
+				<section data-background="#87bd26">
+					<h1>Sélecteurs</h1>
+					<ul>
+						<li>Le sélecteur permet de choisir les balises qui seront affectées par les propriétés</li>
+						<li class="fragment">Nom de la balise : <code class="hljs">a { color: green; }</code></li>
+						<li class="fragment">ID de la balise : <code class="hljs">#contenu { text-align: center; }</code></li>
+						<li class="fragment">Classe de la balise <code class="hljs">.contour_rouge { border: 2px solid #FF0000; }</code></li>	
+                        <li class="fragment"><a href="exemples/04_selecteurs.html" title="Exemple sélecteurs" target="_blank">Exemple</a></li>   						
+					</ul>							
+				</section>
+				<section data-background="#87bd26">
+					<h1>Intégration</h1>
+					<p>Par ordre de priorité :</p>
+					<ul>
+						<li>Sur la balise HTML avec l'attribut <code class="code">style</code></li>
+						<li class="fragment">Dans la page HTML :  balise <code>&lt;style&gt;</code>, de préférence dans <code>&lt;head&gt;</code></li>		
+						<li class="fragment">Dans un fichier <b>.css</b> externe : balise <code>&lt;link&gt;</code> dans <code>&lt;head&gt;</code> = <span class="span1">PRATIQUE RECOMMANDEE</span></li>		
+						<li class="fragment">Appel de plusieurs fichiers externes possibles</li>		
+						<li class="fragment"><a href="exemples/05_integration.html" title="Exemple intégration" target="_blank">Exemple</a></li>   
+					</ul>					
+				</section>	
+                <section data-background="#87bd26">
+						<h1>Concept de cascade</h1>			
+                        <ul>						
+						   <li>Cascade = ordre de priorité sur les fichiers et paramétrages</li>   
+                           <li>Navigateur > Utilisateur > Différents fichiers CSS (externes > head > attribut de balise HTML)</li>   
+                           <li>A retenir : dernière instruction appliquée = la plus proche de la balise HTML</li>     	
+                           <!-- <li><a href="exemples/06_cascade.html" title="Exemple cascade" target="_blank">Exemple</a></li> -->   							   
+                        </ul>			 						
+					</section>                   
+												
+				<section data-background="#87bd26">
+						<h1>Concept d'héritage</h1>		
+                        <ul>
+						    <li>Héritage = ordre de priorité des instructions</li>   						
+                            <!-- <li>Instructions CSS exécutées avec un <b>poids</b> (et non la dernière appliquée)</li> -->
+                            <li><a href="exemples/07_heritage.html" title="Exemple héritage" target="_blank">Exemple</a></li>     								
+                        </ul>						
+				</section>							
+				
+				<section data-background="#87bd26">
+					<h1>Flux</h1>
+					<ul>
+						<li>Flux "normal" (ou "naturel") : les éléments HTML se positionnent selon un ordre selon leur type bloc/en ligne.</li>									
+					    <li>La propriété <code>display</code> va permettre d'inverser le type normal de la balise.</li>									
+                        <li><a href="exemples/08_display.html" title="Exemple display" target="_blank">Exemple</a></li>      
+					</ul>						
+				</section>								
+				<section data-background="#87bd26">
+					<h1>Positionnement</h1>
+					<p class="text-left ma10">5 types de positionnement</p>
+					<img src="images/positionnement.jpg" alt="Positionnement" title="Positionnement" class="fragment grow">				 		
+				</section>			                
+				<!--  Slide verticale -->
+				<section data-background="#87bd26">
+					 <section data-background="#87bd26">
+						<h1>Modèles de boîte</h1>
+						   <img src="images/modele_boite.jpg" title="Modèle boîte standard" alt="Modèle de boîte" class="fragment grow">
+					</section>						
+					<section data-background="#87bd26">
+						<h1>Modèles de boîte</h1>
+						<ul>
+							<li><code>margin</code> : marge extérieure</li>	
+							<li class="fragment"><pre><code>border</code></pre> : bordure</li>			
+							<li class="fragment"><pre><code>padding</code></pre> : espacement intérieur</li>		
+	                        <li class="fragment"><pre><code>width</code></pre> et <pre><code>height</code></pre> : largeur et hauteur (dimensions)</li>
+                            <!-- <li class="fragment">CSS 3 : Nouveau modèle de boîte dit flexible ("flex")</li> -->							
+						</ul>						
+					</section>					
+	           </section>		
+               <!-- fin Slides verticales -->						   
+			   			   						   
+				<section data-background="#87bd26">
+					<h1>Problèmes courants</h1>
+					<ul>
+						<li>La cascade et l'héritage : bien maîtriser les règles</li>	
+						<li class="fragment">Modèle de boîte : dépassement (<code class="code">overflow</code>)</li>
+						<li class="fragment">Compatibilité navigateurs</li>											
+					</ul>						
+				</section>			   	
+
+                <section data-background="#87bd26">
+					<h1>Fonctionnalités avancées</h1>
+					<ul>
+						<li>Media queries, pour le web responsive</li>
+                        <li class="fragment"><a href="https://www.alsacreations.com/tuto/lire/910-creer-des-ombrages-ombres-css-box-shadow-text-shadow.html" title="Exemple ombres" target="_blank">Ombres</a>, 
+						                     <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Utilisation_de_d%C3%A9grad%C3%A9s_CSS" title="Exemple dégradés" target="_blank">dégradés</a>
+						</li>						
+						<li class="fragment">Transitions <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Utiliser_transitions_CSS" title="Exemple animation" target="_blank">Exemple</a></li>												
+					</ul>						
+				</section>				
+						   
+			   <section data-background="#87bd26">
+					<h1>Outils</h1>
+					<ul>
+						<li>S'assurer de la compatibilité navigateur (<a href="https://www.w3schools.com/cssref/css3_pr_box-decoration-break.asp" title="Exemple">exemple</a>)</li>	
+						<li class="fragment">Inspecteur de code des navigateurs (<code class="code">F12</code>)</li>
+						<li class="fragment"><a href="https://jigsaw.w3.org/css-validator" title="Validateur W3C" target="_blank">Validateur de code W3C</a></li>											
+					</ul>						
+				</section>			   
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+											
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>

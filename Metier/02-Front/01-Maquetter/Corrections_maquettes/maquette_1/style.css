@@ -1,0 +1,43 @@
+header, section, footer {
+    border: 1px solid black;
+}
+
+#banniere {
+    position: relative;
+    height: 75px;
+}
+
+#Titre, #connexion, #logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+#Titre {
+    width: 80%;
+    text-align: center;
+    margin: 20px;
+}
+
+#connexion {
+    position: absolute;
+    right: 0px;
+}
+
+#menu {
+    position: relative;
+}
+
+#menu li {
+    display: inline;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+#btn_recherche {
+    position: absolute;
+    right: 0px;
+    top: -15px;
+}
+
